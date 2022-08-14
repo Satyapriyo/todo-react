@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "./style.css";
-
+import "./todo.css";
 // get the localStorage data back
 const getLocalData = () => {
   const lists = localStorage.getItem("mytodolist");
-
   if (lists) {
     return JSON.parse(lists);
   } else {
@@ -44,7 +42,6 @@ const Todo = () => {
       setInputData("");
     }
   };
-
   //edit the items
   const editItem = (index) => {
     const item_todo_edited = items.find((curElem) => {
@@ -54,7 +51,6 @@ const Todo = () => {
     setIsEditItem(index);
     setToggleButton(true);
   };
-
   // how to delete items section
   const deleteItem = (index) => {
     const updatedItems = items.filter((curElem) => {
@@ -62,12 +58,10 @@ const Todo = () => {
     });
     setItems(updatedItems);
   };
-
   // remove all the elements
   const removeAll = () => {
     setItems([]);
   };
-
   // adding localStorage
   useEffect(() => {
     localStorage.setItem("mytodolist", JSON.stringify(items));
@@ -80,11 +74,11 @@ const Todo = () => {
           <figure>
             <img src="./images/Todo_prev_ui.png" alt="todologo" />
             <figcaption>
-              Add Your List Here <i className="fa-solid fa-hand-peace"></i>
+              Add Your List Here<i className="fa-solid fa-hand-peace"></i>
             </figcaption>
           </figure>
           <div className="addItems">
-            <i className="fa-solid fa-pen-line" ></i>
+            <i className="fa-solid fa-pen-line"></i>
             <input
               type="text"
               placeholder="✍ Add Item"
