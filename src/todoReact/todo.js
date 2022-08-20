@@ -9,13 +9,11 @@ const getLocalData = () => {
     return [];
   }
 };
-
 const Todo = () => {
   const [inputdata, setInputData] = useState("");
   const [items, setItems] = useState(getLocalData());
   const [isEditItem, setIsEditItem] = useState("");
   const [toggleButton, setToggleButton] = useState(false);
-
   // add the items fucnction
   const addItem = () => {
     if (!inputdata) {
@@ -72,7 +70,7 @@ const Todo = () => {
       <div className="main-div">
         <div className="child-div">
           <figure>
-            <img src="./images/Todo_prev_ui.png" alt="todologo" />
+            <img src="./images/images(1).jifi" alt="todologo" />
             <figcaption>
               Add Your List Here<i className="fa-solid fa-hand-peace"></i>
             </figcaption>
